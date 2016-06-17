@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @prouct.destroy
+    @product.destroy
     redirect_to products_path, notice: "The product was successfully deleted"
   end
 
