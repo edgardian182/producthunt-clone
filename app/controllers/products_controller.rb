@@ -34,6 +34,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @prouct.destroy
+    redirect_to products_path, notice: "The product was successfully deleted"
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :url, :description)
