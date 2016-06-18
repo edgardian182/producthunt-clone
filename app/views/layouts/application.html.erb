@@ -8,15 +8,15 @@
 </head>
 <body>
 
+<%= render 'layouts/navbar' %>
+
 <% if flash[:notice] %>
   <div class="alert alert-info">
     <%= flash[:notice] %>
   </div>
 <% end %>
 
-<% if signed_in? %>
-  <div>Hola <%= current_user.name %> <%= link_to "Salir", logout_path, method: :delete %></div>
-<% end %>
+
 
 <%= yield %>
 
