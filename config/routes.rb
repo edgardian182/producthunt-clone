@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # patch '/products/:id', to: 'products#update'
   # delete '/products/:id', to: 'products#destroy'
   resources :products do
+    # resource en singular solo crea una RUTA para esas acciones
+    resource :vote, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
 
