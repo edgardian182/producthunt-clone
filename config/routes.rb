@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   # get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
   # patch '/products/:id', to: 'products#update'
   # delete '/products/:id', to: 'products#destroy'
-  resources :products
+  resources :products do
+    resources :comments, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
